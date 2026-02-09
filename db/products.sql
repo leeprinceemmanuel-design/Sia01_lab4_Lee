@@ -1,0 +1,10 @@
+DROP TABLE products IF EXISTS;
+CREATE TABLE products (
+    product_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    price DECIMAL(10, 2) NOT NULL DEFAULT 0.00,
+    stock_quantity SMALLINT NOT NULL DEFAULT 0,
+    status VARCHAR(50) NOT NULL DEFAULT 'active',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

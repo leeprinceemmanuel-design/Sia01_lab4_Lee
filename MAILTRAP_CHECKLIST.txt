@@ -1,0 +1,80 @@
+# Mailtrap Configuration Checklist
+
+**Print this page or save it and fill in your Mailtrap credentials as you set up your account.**
+
+## Your Mailtrap Account Details
+
+- [ ] **Account Email:** ________________________________
+- [ ] **Mailtrap Account Password:** ________________________________
+- [ ] **Sandbox Name:** ________________________________
+
+## SMTP Configuration (from Mailtrap Dashboard)
+
+- [ ] **Host:** smtp.mailtrap.io
+- [ ] **Port:** ☐ 465 (SSL)  ☐ 587 (TLS)
+- [ ] **Username:** ________________________________
+- [ ] **Password:** ________________________________
+
+## Email Configuration
+
+Store these in `/config/mailtrap.php`:
+
+- [ ] **From Email:** ________________________________
+- [ ] **From Name:** ________________________________
+- [ ] **Admin Email:** ________________________________
+- [ ] **Support Email:** ________________________________
+
+## Configuration Steps
+
+### Step 1: Update `/config/mailtrap.php`
+
+```php
+define('MAILTRAP_HOST', 'smtp.mailtrap.io');
+define('MAILTRAP_PORT', 465);  // or 587
+define('MAILTRAP_USERNAME', '___________________');  // Your username here
+define('MAILTRAP_PASSWORD', '___________________');   // Your password here
+define('MAILTRAP_FROM_EMAIL', '___________________');
+define('MAILTRAP_FROM_NAME', '___________________');
+define('ADMIN_EMAIL', '___________________');
+define('SUPPORT_EMAIL', '___________________');
+```
+
+### Step 2: Test the Integration
+
+1. Fill in the credentials
+2. Go to: `http://localhost/cms-monolithic-legacy-php-main/contact.php`
+3. Submit a test contact message
+4. Check your Mailtrap dashboard for the email
+
+### Step 3: Test Order Emails
+
+1. Register a new account
+2. Add products to cart
+3. Complete checkout
+4. Check Mailtrap for order confirmation emails
+
+## Mailtrap Dashboard URLs
+
+- **Login:** https://mailtrap.io/accounts/login
+- **Sandbox:** https://mailtrap.io/inboxes (after login)
+- **Settings:** https://mailtrap.io/settings (after login)
+
+## Email Features Enabled
+
+✅ Order Confirmation Emails
+✅ Admin Order Notifications
+✅ Contact Form Emails
+✅ HTML Email Templates
+✅ Email Logging
+
+## Need Help?
+
+1. Review `MAILTRAP_SETUP.md` for detailed instructions
+2. Check Mailtrap documentation: https://mailtrap.io/
+3. Review the `EmailService.php` class for code examples
+
+---
+
+**Date Setup:** ________________
+
+**Configured By:** ________________
